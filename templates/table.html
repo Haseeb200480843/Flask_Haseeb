@@ -1,0 +1,114 @@
+{% extends "index.html" %} {% block title %}Total cases{% endblock %} {% block
+    content %}
+
+<html>
+<head>
+<style>
+ * {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 60%;
+  padding: 5px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+  <h2 align = 'Center'></h2>
+<h2 align = 'Center' style="background-color:rgb(85, 138, 151);">Aggregated data of COVID as of 14th December 2021</h2>
+<h2 align = 'Center'>-</h2>
+<div class="row">
+  <div class="column">
+<table>
+  <tr>
+    <th>Continent</th>
+    <th>Total Population</th>
+    <th>Total Cases</th>
+    <th>Total Active_Cases</th>
+    <th>Total Recovered_Cases</th>
+    <th>Total Deaths</th>
+  </tr>
+  <tr>
+    <td>Africa</td>
+    <td>793551200</td>
+    <td>6881472</td>
+    <td>348168</td>
+    <td>6348073</td>
+    <td>185231</td>
+  </tr>
+  <tr>
+    <td>Asia</td>
+    <td>1295888000</td>
+    <td>38604789</td>
+    <td>1205853</td>
+    <td>36878049</td>
+    <td>520887</td>
+  </tr>
+  <tr>
+    <td>Europe</td>
+    <td>533783700</td>
+    <td>55923668</td>
+    <td>5173557</td>
+    <td>49599638</td>
+    <td>1150473</td>
+  </tr>
+  <tr>
+    <td>North-America</td>
+    <td>207313700</td>
+    <td>7446484</td>
+    <td>429312</td>
+    <td>6657998</td>
+    <td>359174</td>
+  </tr>
+  <tr>
+    <td>Oceania</td>
+    <td>35120180</td>
+    <td>268694</td>
+    <td>18776</td>
+    <td>247218</td>
+    <td>2700</td>
+  </tr>
+  <tr>
+    <td>South-America</td>
+    <td>333069800</td>
+    <td>33804886</td>
+    <td>305356</td>
+    <td>32598218</td>
+    <td>901312</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+
+
+{% endblock %}

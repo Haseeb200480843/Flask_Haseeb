@@ -1,0 +1,36 @@
+{% extends "index.html" %} {% block title %}Maps{% endblock %} {% block content%}
+<html>
+  <head>
+    <h2></h2>
+    <h2 align="center" style="background-color:rgb(161, 103, 139);">Percentage of Population</h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['continent', 'total polupation', { role: 'style' }],
+          ['Africa',         793551200, 'color: blue'],
+          ['Asia',          1295888000, 'color: gray'],
+          ['Europe',        533783700, 'color: pink'],
+          ['North-America',  207313700, 'color: green'],
+          ['Oceania',         35120180, 'color: gray'],
+          ['South-America',  333069800, 'color: red']
+        ]);
+        
+
+        var options = {
+          title: 'Total Population in each continent',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+{% endblock %}

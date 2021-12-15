@@ -1,0 +1,91 @@
+{% extends "index.html" %} {% block title %}pie-chart{% endblock %} {% block content%}
+<html>
+  <head>
+    <h2></h2>
+    <h2 align="center" style="background-color:rgb(161, 87, 43);">Percentage of total cases</h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['continent', 'total cases'],
+          ['Africa',         6881472],
+          ['Asia',          38604789],
+          ['Europe',        55923668],
+          ['North-America',  7446484],
+          ['Oceania',         268694],
+          ['South-America',  33804886]
+        ]);
+
+        
+        
+      
+        var data2 = google.visualization.arrayToDataTable([
+          ['continent', 'total active cases', { role: 'style' }],
+          ['Africa',         348168, 'color: gray'],
+          ['Asia',          1205853, 'color: red'],
+          ['Europe',        5173557, 'color: blue'],
+          ['North-America',  429312, 'color: green'],
+          ['Oceania',         18776, 'color: yellow'],
+          ['South-America',  305356, 'color: orange']
+        ]);
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['continent', 'total recovered cases', { role: 'style' }],
+          ['Africa',         6348073, 'color: blue'],
+          ['Asia',          36878049, 'color: pink'],
+          ['Europe',        49599638, 'color: black'],
+          ['North-America',  6657998, 'color: brown'],
+          ['Oceania',         247218, 'color: gray'],
+          ['South-America',  32598218, 'color: green']
+        ]);
+
+        var data4 = google.visualization.arrayToDataTable([
+          ['continent', 'total deaths', { role: 'style' }],
+          ['Africa',         185231, 'color: gray'],
+          ['Asia',          520887, 'color: red'],
+          ['Europe',        1150473, 'color: green'],
+          ['North-America',  359174, 'color: yellow'],
+          ['Oceania',         2700, 'color: blue'],
+          ['South-America',  901312, 'color: orange']
+        ]);
+
+        var options = {
+          title: 'Total number of cases',
+          is3D: true,
+        };
+        var options2 = {
+          title: 'Total number of active cases',
+          is3D: true,
+        };
+        var options3 = {
+          title: 'Total number of recovered cases',
+          is3D: true,
+        };
+        var options4 = {
+          title: 'Total number of deaths',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+        var chart2 = new google.visualization.BarChart(document.getElementById('piechart_3d2'));
+        chart2.draw(data2, options2);
+        var chart3 = new google.visualization.LineChart(document.getElementById('piechart_3d3'));
+        chart3.draw(data3, options3);
+        var chart4 = new google.visualization.AreaChart(document.getElementById('piechart_3d4'));
+        chart4.draw(data4, options4);
+      }
+    </script>
+  </head>
+  <body>
+  <div>
+    <div id="piechart_3d" style="width:45%; height: 300px; display: inline-block;"></div>
+    <div id="piechart_3d2" style="width: 45%; height: 300px; display: inline-block;"></div>
+    <div id="piechart_3d3" style="width: 45%; height: 300px; display: inline-block;"></div>
+    <div id="piechart_3d4" style="width: 45%; height: 300px; display: inline-block;"></div>
+  </div>
+  </body>
+</html>
+{% endblock %} 

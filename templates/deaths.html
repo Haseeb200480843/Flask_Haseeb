@@ -1,0 +1,118 @@
+{% extends "index.html" %} {% block title %}Total cases{% endblock %} {% block
+    content %}
+<html>
+  <head>
+    <h2></h2>
+    <h2 align="center" style="background-color:rgb(85, 101, 145);">Total number of deaths in each country
+    </h2>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+        ['Country', 'Popularity'],
+          ['Algeria', 6151],
+          ['Egypt', 21104],
+          ['Eswatini', 1252],
+          ['Ethiopia', 6833],
+          ['Gabon', 285],
+          ['Kenya', 5349],
+          ['Madagascar', 980],
+          ['Mauritania', 850],
+          ['Morocco', 14798],
+          ['Mozambique', 1945],
+          ['Namibia', 3578],
+          ['Niger', 269],
+          ['Nigeria', 2983],
+          ['South-Africa', 90148],
+          ['Tunisia', 25437],
+          ['Uganda', 3269],
+          ['Bangladesh', 28031],
+          ['Cyprus', 611],
+          ['Iran', 130764],
+          ['Iraq', 23994],
+          ['Israel', 8223],
+          ['Japan', 18374],
+          ['Jordan', 12024],
+          ['Kazakhstan', 12876],
+          ['Kyrgyzstan', 2773],
+          ['Lebanon', 8860],
+          ['Malaysia', 30908],
+          ['Mongolia', 2038],
+          ['Nepal', 11557],
+          ['Pakistan', 28839],
+          ['Palestine', 4578],
+          ['Philippines', 50351],
+          ['S-Korea', 4378],
+          ['Saudi-Arabia', 8855],
+          ['Singapore', 798],
+          ['Thailand', 21229],
+          ['Turkey', 79322],
+          ['Uzbekistan', 1442],
+          ['Vietnam', 28081],
+          ['Yemen', 1972],
+          ['Albania', 3140],
+          ['Andorra', 134],
+          ['Austria', 13218],
+          ['Belgium', 27631],
+          ['Bulgaria', 29688],
+          ['Croatia', 11666],
+          ['Czechia', 34697],
+          ['Estonia', 1865],
+          ['Finland', 1442],
+          ['Greece', 19345],
+          ['Hungary', 37079],
+          ['Iceland', 36],
+          ['Italy', 134929],
+          ['Latvia', 4376],
+          ['Lithuania', 7021],
+          ['Luxembourg', 895],
+          ['Moldova', 9393],
+          ['Montenegro', 2354],
+          ['Poland', 88508],
+          ['Portugal', 18673],
+          ['Romania', 57741],
+          ['Russia', 290604],
+          ['Serbia', 12209],
+          ['Slovenia', 5425],
+          ['Spain', 88484],
+          ['Switzerland', 11841],
+          ['UK', 146477],
+          ['Ukraine', 91602],
+          ['Canada', 29941],
+          ['Dominican-Republic', 4219],
+          ['Guatemala', 16048],
+          ['Jamaica', 2428],
+          ['Mexico', 296721],
+          ['Panama', 7388],
+          ['Trinidad-and-Tobago', 2429],
+          ['Australia', 2113],
+          ['Papua-New-Guinea', 587],
+          ['Argentina', 116792],
+          ['Bolivia', 19330],
+          ['Brazil', 616980],
+          ['Colombia', 129163],
+          ['French-Guiana', 333],
+          ['Guyana', 1023],
+          ['Paraguay', 16513],
+          ['Suriname', 1178]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 1200px; height: 500px;"></div>
+  </body>
+</html>
+{% endblock %}
